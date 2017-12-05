@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:BaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:pages="clr-namespace:LoggingSample.Pages"
+                       xmlns:viewModel="clr-namespace:LoggingSample.ViewModels"
+                       x:Class="LoggingSample.Pages.DevicesPage"
+                       x:TypeArguments="viewModel:DevicesViewModel">
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding Path=Devices}" ItemTapped="OnItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding Path=Name}" FontSize="Large" />
+                            <Label Text="{Binding Path=Id}" FontSize="Small" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</pages:BaseContentPage>
